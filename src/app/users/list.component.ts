@@ -5,7 +5,8 @@ import { AccountService } from '@app/_services';
 
 @Component({ templateUrl: 'list.component.html' })
 export class ListComponent implements OnInit {
-    users = null;
+    users : any;
+    direction : any='desc';
 
     constructor(private accountService: AccountService) {}
 
@@ -23,5 +24,18 @@ export class ListComponent implements OnInit {
             .subscribe(() => {
                 this.users = this.users.filter(x => x.id !== id) 
             });
+    }
+
+    sort(value: any) {
+        let sortedArray = (this.users || []).sort((a,b)=>{
+            if(a[value] > b[value]){
+              return 1;
+            }
+            if(a[value] < b[value]){
+              return -1;
+            }
+            return 0;
+          })
+        this.users=sortedArray;
     }
 }

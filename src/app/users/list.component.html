@@ -3,9 +3,9 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th style="width: 30%">First Name</th>
-            <th style="width: 30%">Last Name</th>
-            <th style="width: 30%">Username</th>
+            <th style="width: 30%" [appSort]="users" data-order="desc" data-name="firstName">First Name</th>
+            <th style="width: 30%" [appSort]="users" data-order="desc" data-name="lastName">Last Name</th>
+            <th style="width: 30%" [appSort]="users" data-order="desc" data-name="username">Username</th>
             <th style="width: 10%"></th>
         </tr>
     </thead>
