@@ -15,7 +15,7 @@ export class ListComponent implements OnInit, AfterViewInit {
         this.accountService.getAll()
             .pipe(first())
             .subscribe(users => this.users = users);
-    }
+            }
 
     deleteUser(id: string) {
         const user = this.users.find(x => x.id === id);
@@ -39,6 +39,7 @@ export class ListComponent implements OnInit, AfterViewInit {
           })
         this.users=sortedArray;
     }
+    
 
     ngAfterViewInit() {
         new Sortable(this.table.nativeElement.getElementsByTagName('tbody')[0], {

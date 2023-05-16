@@ -7,12 +7,14 @@ import { LayoutComponent } from './layout.component';
 import { ListComponent } from './list.component';
 import { AddEditComponent } from './add-edit.component';
 import { SortDirective } from './directive/sort.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        UsersRoutingModule
+        UsersRoutingModule,
+        FormsModule
     ],
     declarations: [
         LayoutComponent,

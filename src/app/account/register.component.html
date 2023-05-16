@@ -1,67 +1,91 @@
-﻿
-<!-- Section: Design Block -->
-<section class="background-radial-gradient overflow-hidden">
-  
-            <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-              <div class="row gx-lg-5 align-items-center mb-5">
-                <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-                  <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                    Digital Platform <br />
-                    <span style="color: hsl(218, 81%, 75%)">for Distance Learning</span>
-                  </h1>
-                  <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-                    Internet and online based digital technologies such as desktop, computers, mobile phones and other.
-                  </p>
-                </div>
-          
-                <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-                  <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-                  <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-          
-                  <div class="card">
-                    <h4 class="card-header">Register</h4>
-                    <div class="card-body">
-                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                            <div class="form-group">
-                                <label for="firstName">First Name</label>
-                                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+﻿<section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+
+            <div class="col-lg-6 d-flex align-items-center bgcolor">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4><span class="blackText">Digital</span>&nbsp;
+                  <span class="whiteText">Platform</span></h4>
+                  <h4><span class="whiteText">for distance</span>&nbsp;
+                    <span class="blackText">Learning</span></h4>
+                    <br>
+                <p class="small mb-0">Internet and online based digital technologies such as desktop
+                  computers, mobile phones other
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card-body p-md-5">
+
+                <div class="text-center">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                    style="width: 185px;" alt="logo">
+                    <h4 class="mt-1 mb-5 pb-1" id="div1">Welcome back</h4>
+                  </div>
+
+               
+                 <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+                    <div class="form-group form-outline mb-4">
+                        <input type="text" formControlName="firstName" class="form-control" 
+                        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" placeholder="First Name" />
                                 <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                                     <div *ngIf="f.firstName.errors.required">First Name is required</div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-                                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                                    <div *ngIf="f.username.errors.required">Username is required</div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                                    <div *ngIf="f.password.errors.required">Password is required</div>
-                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <button [disabled]="loading" class="btn btn-primary">
-                                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                                    Register
-                                </button>
-                                <a routerLink="../login" class="btn btn-link">Cancel</a>
-                            </div>
-                        </form>
+                    </div>
+
+                    <div class="form-group form-outline mb-4">
+                      <input type="text" formControlName="lastName" class="form-control" 
+                      [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" placeholder="Last Name"/>
+                      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                      </div>
+                  </div>
+
+                  <div class="form-group form-outline mb-4">
+                    <input type="text" formControlName="username" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Username" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
                     </div>
                 </div>
-                </div>
+
+                <div class="form-group form-outline mb-4">
+                  <input type="password" formControlName="password" class="form-control" 
+                  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password"/>
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                      <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                  </div>
+              </div>
+
+                  <div class="form-group">
+                      <button [disabled]="loading" class="btn btn-danger btn-block fa-lg mb-3">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Register
+                    </button>
+
+                    <div class="d-flex align-items-center justify-content-center">
+                      <p class="mb-0 me-2">
+                        <a routerLink="../login">Cancel</a>
+                      </p>
+                    </div>
+                      
+                  </div>
+
+                </form> 
               </div>
             </div>
-          </section> 
+
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+</section>
